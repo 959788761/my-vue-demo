@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>我的第一个Vue小项目</title>
+  <!-- 直接引入Vue3，零安装依赖 -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <style>
+    .box{max-width: 500px;margin: 50px auto;text-align:center;}
+    button{padding:8px 16px;margin:10px;cursor:pointer;}
+  </style>
+</head>
+<body>
+  <div id="app" class="box">
+    <h1>{{ title }}</h1>
+    <p>计数器：{{ count }}</p>
+    <button @click="count++">点我+1</button>
+    <button @click="count--">点我-1</button>
+  </div>
+
+  <script>
+    const { createApp } = Vue
+    createApp({
+      data(){
+        return{
+          title: 'Vue+GitHub完整项目',
+          count: 0
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>
